@@ -1,4 +1,10 @@
 _build/
 .merlin
 bin/
-
+_esy/
+esy.lock/
+esy.json
+*/libthrower.a
+*/libthrower.o
+.vscode/
+node_modules/
