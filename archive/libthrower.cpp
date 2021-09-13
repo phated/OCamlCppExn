@@ -18,7 +18,7 @@
 #include <exception>
 #include <iostream>
 
-#include "exn_thrower.h"
+#include "libthrower.h"
 
 extern "C" {
 
@@ -28,7 +28,7 @@ void throw_and_catch_exn(void)
   {
     throw std::runtime_error("This is not caught on macOS, why?");
   }
-  catch(...)
+  catch(std::runtime_error&)
   {
     std::cout << "Exception successfully caught\n";
   }
