@@ -2,7 +2,7 @@
 
 # Build using dune
 all:
-	cc -c archive/libthrower.cpp -o archive/libthrower.o
+	cc -c archive/libthrower.cpp -g -o archive/libthrower.o
 	ar rcs archive/libthrower.a archive/libthrower.o
 	cp archive/libthrower.a cpp/libthrower.a
 	cp archive/libthrower.h cpp/libthrower.h
