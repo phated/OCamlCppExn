@@ -1,19 +1,6 @@
 (library
  (name exn_thrower)
- ;;; -lstdc++ is not portable, it can be e.g. -lc++
- (c_library_flags -lstdc++)
  (foreign_stubs
   (language c)
   (names thrower_stub))
- (foreign_archives thrower)
- (library_flags
-  (:include library_flags.sexp)))
-
-;; fetch library flags from config/discover (since it is OS specific)
-
-(rule
- (targets library_flags.sexp)
- (deps
-  (:discover config/discover.exe))
- (action
-  (run %{discover})))
+ (foreign_archives thrower))

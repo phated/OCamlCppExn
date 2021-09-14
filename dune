@@ -1,3 +1,14 @@
 (executable
  (name oce_runner)
- (libraries exn_thrower))
+ (libraries exn_thrower)
+ (ocamlopt_flags
+  (:include library_flags.sexp)))
+
+;; fetch library flags from config/discover (since it is OS specific)
+
+(rule
+ (targets library_flags.sexp)
+ (deps
+  (:discover config/discover.exe))
+ (action
+  (run %{discover})))
